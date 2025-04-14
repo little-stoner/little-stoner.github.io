@@ -17,19 +17,21 @@
   <meta http-equiv="window-target" content="_top" />
   
   
-  <title>k8s introduction | Hexo</title>
-  <meta property="og:type" content="article">
-<meta property="og:title" content="k8s introduction">
-<meta property="og:url" content="https://little-stoner.github.io/2025/04/13/k8s/intro/index.html">
+  <title>migrate mysql data | Hexo</title>
+  <meta name="description" content="Migrate MySQL DataBackgroundMysql is installed in root directory, and the data is stored in &#x2F;var&#x2F;lib&#x2F;mysql directory.When the root directory is not sufficient for the data.we need to migrate the data">
+<meta property="og:type" content="article">
+<meta property="og:title" content="migrate mysql data">
+<meta property="og:url" content="https://little-stoner.github.io/2025/04/14/mysql/migration/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="Migrate MySQL DataBackgroundMysql is installed in root directory, and the data is stored in &#x2F;var&#x2F;lib&#x2F;mysql directory.When the root directory is not sufficient for the data.we need to migrate the data">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2025-04-13T05:17:01.398Z">
-<meta property="article:modified_time" content="2025-04-13T05:17:19.460Z">
+<meta property="article:published_time" content="2025-04-14T13:51:29.339Z">
+<meta property="article:modified_time" content="2025-04-14T16:54:11.434Z">
 <meta property="article:author" content="John Doe">
-<meta property="article:tag" content="k8s">
+<meta property="article:tag" content="mysql">
 <meta name="twitter:card" content="summary">
   <!-- Canonical links -->
-  <link rel="canonical" href="https://little-stoner.github.io/2025/04/13/k8s/intro/index.html">
+  <link rel="canonical" href="https://little-stoner.github.io/2025/04/14/mysql/migration/index.html">
   
   
     <link rel="icon" href="/favicon.png" type="image/x-icon">
@@ -289,14 +291,14 @@
   
 <main class="main" role="main">
   <div class="content">
-  <article id="post-k8s/intro" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
+  <article id="post-mysql/migration" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
     
     <div class="article-header">
       
         
   
     <h1 class="article-title" itemprop="name">
-      k8s introduction
+      migrate mysql data
     </h1>
   
 
@@ -304,32 +306,52 @@
       <div class="article-meta">
         <span class="article-date">
     <i class="icon icon-calendar-check"></i>
-	<a href="/2025/04/13/k8s/intro/" class="article-date">
-	  <time datetime="2025-04-13T05:17:01.398Z" itemprop="datePublished">2025-04-13</time>
+	<a href="/2025/04/14/mysql/migration/" class="article-date">
+	  <time datetime="2025-04-14T13:51:29.339Z" itemprop="datePublished">2025-04-14</time>
 	</a>
 </span>
         
   <span class="article-category">
     <i class="icon icon-folder"></i>
-    <a class="article-category-link" href="/categories/k8s/">k8s</a>
+    <a class="article-category-link" href="/categories/mysql/">mysql</a>
   </span>
 
         
   <span class="article-tag">
     <i class="icon icon-tags"></i>
-	<a class="article-tag-link-link" href="/tags/k8s/" rel="tag">k8s</a>
+	<a class="article-tag-link-link" href="/tags/mysql/" rel="tag">mysql</a>
   </span>
 
 
         
 
-        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2025/04/13/k8s/intro/#comments" class="article-comment-link">Comments</a></span>
+        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2025/04/14/mysql/migration/#comments" class="article-comment-link">Comments</a></span>
         
       </div>
     </div>
     <div class="article-entry marked-body" itemprop="articleBody">
       
-        
+        <h1 id="Migrate-MySQL-Data"><a href="#Migrate-MySQL-Data" class="headerlink" title="Migrate MySQL Data"></a>Migrate MySQL Data</h1><h2 id="Background"><a href="#Background" class="headerlink" title="Background"></a>Background</h2><p>Mysql is installed in root directory, and the data is stored in <code>/var/lib/mysql</code> directory.<br>When the root directory is not sufficient for the data.<br>we need to migrate the data to another directory.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mysql --version </span><br><span class="line">mysql  Ver 8.0.41-0ubuntu0.20.04.1 <span class="keyword">for</span> Linux on x86_64 ((Ubuntu))</span><br></pre></td></tr></table></figure>
+
+<h2 id="Modify-the-mysql-configuration-file"><a href="#Modify-the-mysql-configuration-file" class="headerlink" title="Modify the mysql configuration file"></a>Modify the mysql configuration file</h2><p>First stop the mysql service.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">sudo</span> systemctl stop mysql</span><br></pre></td></tr></table></figure>
+
+<p>Then create a new directory for the mysql data.<br>The config file is located in <code>/etc/mysql/mysql.conf.d/mysqld.cnf</code> file.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim /etc/mysql/mysql.conf.d/mysqld.cnf</span><br></pre></td></tr></table></figure>
+<p>Then add or overwrite the following lines to the file.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">datadir=/home/mysql/mysql</span><br><span class="line">socket=/home/mysql/mysql/mysql.sock</span><br><span class="line"></span><br><span class="line">log-error=/home/mysql/log/mysqld.log</span><br><span class="line">pid-file=/home/mysql/run/mysqld/mysqld.pid</span><br></pre></td></tr></table></figure>
+<h2 id="Create-the-new-directory"><a href="#Create-the-new-directory" class="headerlink" title="Create the new directory"></a>Create the new directory</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">sudo</span> <span class="built_in">mkdir</span> -p /home/mysql/mysql</span><br><span class="line"><span class="built_in">sudo</span> <span class="built_in">mkdir</span> -p /home/mysql/log</span><br><span class="line"><span class="built_in">touch</span> /home/mysql/log/mysqld.log</span><br><span class="line"><span class="built_in">sudo</span> <span class="built_in">mkdir</span> -p /home/mysql/run/mysqld</span><br></pre></td></tr></table></figure>
+
+<h2 id="Change-the-ownership"><a href="#Change-the-ownership" class="headerlink" title="Change the ownership"></a>Change the ownership</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cp</span> -ar /var/lib/mysql/ /home/mysql/mysql/</span><br><span class="line"><span class="built_in">sudo</span> <span class="built_in">chown</span> -R mysql:mysql /home/mysql</span><br><span class="line"><span class="built_in">sudo</span> <span class="built_in">chmod</span> 777 /home/mysql</span><br></pre></td></tr></table></figure>
+
+<h2 id="Change-the-AppArmor-configuration"><a href="#Change-the-AppArmor-configuration" class="headerlink" title="Change the AppArmor configuration"></a>Change the AppArmor configuration</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">sudo</span> vim /etc/apparmor.d/usr.sbin.mysqld</span><br><span class="line"><span class="comment"># add this line at the end of the file</span></span><br><span class="line"><span class="built_in">alias</span> /var/lib/mysql/ -&gt; /home/mysql/,</span><br><span class="line"><span class="comment"># then restart</span></span><br><span class="line">systemctl restart apparmor</span><br></pre></td></tr></table></figure>
+
+<h2 id="Start-the-mysql-service"><a href="#Start-the-mysql-service" class="headerlink" title="Start the mysql service"></a>Start the mysql service</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">sudo</span> systemctl start mysql</span><br><span class="line"><span class="comment"># delete the old files</span></span><br><span class="line"><span class="built_in">rm</span> -rf /var/lib/mysql</span><br></pre></td></tr></table></figure>
+
+
+
+
       
     </div>
     <div class="article-footer">
@@ -338,7 +360,7 @@
     
     <li class="post-copyright-link hidden-xs">
       <strong>本文链接：</strong>
-      <a href="https://little-stoner.github.io/2025/04/13/k8s/intro/" title="k8s introduction" target="_blank" rel="external">https://little-stoner.github.io/2025/04/13/k8s/intro/</a>
+      <a href="https://little-stoner.github.io/2025/04/14/mysql/migration/" title="migrate mysql data" target="_blank" rel="external">https://little-stoner.github.io/2025/04/14/mysql/migration/</a>
     </li>
     
     <li class="post-copyright-license">
@@ -385,12 +407,12 @@
   <ul class="pager pull-left">
     
     <li class="prev">
-      <a href="/2025/04/13/visionOs/helloVisionPro/" title="hello vision pro"><i class="icon icon-angle-left" aria-hidden="true"></i><span>&nbsp;&nbsp;Newer</span></a>
+      <a href="/2025/04/14/visionOs/swiftUiScene/" title="swift ui scene"><i class="icon icon-angle-left" aria-hidden="true"></i><span>&nbsp;&nbsp;Newer</span></a>
     </li>
     
     
     <li class="next">
-      <a href="/2025/04/12/aider/" title="aider"><span>Older&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
+      <a href="/2025/04/13/visionOs/helloVisionPro/" title="hello vision pro"><span>Older&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
     </li>
     
     
