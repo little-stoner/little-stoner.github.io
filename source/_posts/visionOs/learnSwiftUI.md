@@ -144,6 +144,148 @@ HStack {
 ```
 <img src="/images/visionOs/swiftUIShape.png" width="800" height="400" alt="swiftUIShape">
 
+
+## Scale views 
+View layout that adapts to the font styles, Dynamic Type, and varying string lengths.
+```swift
+import SwiftUI
+import RealityKit
+import RealityKitContent
+
+struct KeywordBubbleDefaultPadding: View {
+    let keyword: String
+    let symbol: String
+    var body: some View {
+        Label(keyword, systemImage: symbol)
+            .font(.title)
+            .foregroundColor(.white)
+            .padding()
+            .background(.purple.opacity(0.75), in: Capsule())
+    }
+}
+
+struct KeywordBubbleDefaultPadding_Previews: View {
+    let keywords = ["chives", "fern-leaf lavender"]
+    var body: some View {
+        VStack {
+            ForEach(keywords, id: \.self) { word in
+                KeywordBubbleDefaultPadding(keyword: word, symbol: "leaf")
+            }
+        }
+    }
+}
+
+struct ScalingView: View {
+
+    var body: some View {
+        VStack {
+            KeywordBubbleDefaultPadding_Previews()
+        }
+    }
+}
+```
+<img src="/images/visionOs/swiftUIScaleView.png" width="800" height="400" alt="swiftUIScaleView">
+
+## Layering content
+The iphone message overlay effect
+```swift
+struct Caption: View {
+    let text: String
+    var body: some View {
+        Text(text)
+            .padding()
+            .background(Color("TextContrast").opacity(0.75),
+                        in: RoundedRectangle(cornerRadius: 10.0, style: .continuous))
+            .padding()
+    }
+}
+
+struct CaptionedPhoto: View {
+    let assetName: String
+    let captionText: String
+    var body: some View {
+        Image(assetName)
+            .resizable()
+            .scaledToFit()
+            .overlay(alignment: .bottom) {
+                Caption(text: captionText)
+            }
+            .clipShape(RoundedRectangle(cornerRadius: 10.0, style: .continuous))
+            .padding()
+    }
+}
+
+
+struct LayeringContent : View {
+    
+    let landscapeName = "mars"
+    let landscapeCaption = "This photo is wider than it is tall."
+    let portraitName = "mars"
+    let portraitCaption = "This photo is taller than it is wide."
+    var body: some View {
+            CaptionedPhoto(assetName: portraitName,
+                           captionText: portraitCaption)
+            CaptionedPhoto(assetName: landscapeName,
+                           captionText: landscapeCaption)
+            .preferredColorScheme(.dark)
+            CaptionedPhoto(assetName: landscapeName,
+                           captionText: landscapeCaption)
+            .preferredColorScheme(.light)
+        }
+    
+}
+```
+
+## Hide A View
+Hide a view is the way in vue `v-if`
+```swift
+struct IfElseTrain: View {
+    var longerTrain: Bool
+    
+    var body: some View {
+        VStack {
+            HStack {
+                Image(systemName: "train.side.rear.car")
+                if longerTrain {
+                    Image(systemName: "train.side.middle.car")
+                }
+                Image(systemName: "train.side.front.car")
+            }
+            Divider()
+        }
+    }
+}
+
+struct HideView : View {
+    
+    var body : some View {
+        IfElseTrain(longerTrain: true)
+        IfElseTrain(longerTrain: false)
+    }
+}
+```
+<img src="/images/visionOs/swiftUIHideView.png" width="800" height="400" alt="swiftUIHideView">
+
+## Stacks
+Stacks align the element in its.
+`HStack`, `VStack`, `ZStack`
+```swift
+struct StackView : View {
+    
+    var body : some View {
+        VStack {
+            
+        }
+        HStack {
+            
+        }
+        ZStack {
+            
+        }
+    }
+}
+```
+
 ## Summary
 swift ui is more like a combination of HTML and CSS.
 It is declarative and reactive kind of like vue.
