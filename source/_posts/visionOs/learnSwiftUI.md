@@ -286,6 +286,65 @@ struct StackView : View {
 }
 ```
 
+## AdjustingTheSpace
+specify the space and alignment of the element.
+```swift
+struct AdjustingTheSpace : View {
+    var body : some View {
+        VStack {
+            Text("Default Spacing")
+            HStack(spacing: 20) {
+                TrainCar(.rear)
+                TrainCar(.middle)
+                TrainCar(.front)
+            }
+            TrainTrack()
+        }
+    }
+}
+```
+```swift
+struct AdjustingTheSpace : View {
+    var body : some View {
+        VStack {
+            Text("Default Spacing")
+            HStack(spacing: 0) {
+                TrainCar(.rear)
+                TrainCar(.middle)
+                TrainCar(.front)
+            }
+            TrainTrack()
+        }
+    }
+}
+```
+<img src="/images/visionOs/swiftUISpacing.png" width="800" height="400" alt="swiftUISpacing">
+
+add padding between elements
+```swift
+struct AdjustingTheSpace : View {    
+    var body : some View {
+        VStack {
+            Text("Default Spacing")
+            HStack(spacing: 20) {
+                TrainCar(.rear)
+                    .padding([.leading])
+                    .background(Color.blue)
+                TrainCar(.middle)
+                    .padding()
+                    .background(Color.blue)
+                TrainCar(.front)
+            }
+            .padding()
+            .background(Color.green)
+            TrainTrack()
+        }
+    }
+    
+}
+```
+<img src="/images/visionOs/swiftUIPadding.png" width="800" height="400" alt="swiftUIPadding">
+
 ## Summary
 swift ui is more like a combination of HTML and CSS.
 It is declarative and reactive kind of like vue.
