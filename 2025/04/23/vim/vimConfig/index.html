@@ -17,16 +17,21 @@
   <meta http-equiv="window-target" content="_top" />
   
   
-  <title>Archive | Hexo</title>
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="https://little-stoner.github.io/archives/index.html">
+  <title>vim config | Hexo</title>
+  <meta name="description" content="vim configadd .vimrc file to your home directorys 123456789101112131415161718192021222324252627282930313233343536set clipboard&#x3D;unnamedset nocompatibleset visualbellset showmodeset nuset encoding&#x3D;UTF-8">
+<meta property="og:type" content="article">
+<meta property="og:title" content="vim config">
+<meta property="og:url" content="https://little-stoner.github.io/2025/04/23/vim/vimConfig/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="vim configadd .vimrc file to your home directorys 123456789101112131415161718192021222324252627282930313233343536set clipboard&#x3D;unnamedset nocompatibleset visualbellset showmodeset nuset encoding&#x3D;UTF-8">
 <meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2025-04-23T13:35:49.800Z">
+<meta property="article:modified_time" content="2025-04-23T13:36:25.423Z">
 <meta property="article:author" content="John Doe">
+<meta property="article:tag" content="vim">
 <meta name="twitter:card" content="summary">
   <!-- Canonical links -->
-  <link rel="canonical" href="https://little-stoner.github.io/archives/index.html">
+  <link rel="canonical" href="https://little-stoner.github.io/2025/04/23/vim/vimConfig/index.html">
   
   
     <link rel="icon" href="/favicon.png" type="image/x-icon">
@@ -285,138 +290,171 @@
   
   
 <main class="main" role="main">
-  	<article class="content article article-archives article-type-list" itemscope="">
-	    <header class="article-header">
-	      <h1 itemprop="title">Archive</h1>
-	      <p class="text-muted">Total 10 articles</p>
-	    </header>
-	    <div class="article-body">
-	      
+  <div class="content">
+  <article id="post-vim/vimConfig" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
+    
+    <div class="article-header">
+      
+        
   
+    <h1 class="article-title" itemprop="name">
+      vim config
+    </h1>
+  
+
+      
+      <div class="article-meta">
+        <span class="article-date">
+    <i class="icon icon-calendar-check"></i>
+	<a href="/2025/04/23/vim/vimConfig/" class="article-date">
+	  <time datetime="2025-04-23T13:35:49.800Z" itemprop="datePublished">2025-04-23</time>
+	</a>
+</span>
+        
+  <span class="article-category">
+    <i class="icon icon-folder"></i>
+    <a class="article-category-link" href="/categories/vim/">vim</a>
+  </span>
+
+        
+  <span class="article-tag">
+    <i class="icon icon-tags"></i>
+	<a class="article-tag-link-link" href="/tags/vim/" rel="tag">vim</a>
+  </span>
+
+
+        
+
+        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2025/04/23/vim/vimConfig/#comments" class="article-comment-link">Comments</a></span>
+        
+      </div>
+    </div>
+    <div class="article-entry marked-body" itemprop="articleBody">
+      
+        <h1 id="vim-config"><a href="#vim-config" class="headerlink" title="vim config"></a>vim config</h1><p>add <code>.vimrc</code> file to your home directorys</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">set</span> clipboard=unnamed</span><br><span class="line"><span class="built_in">set</span> nocompatible</span><br><span class="line"><span class="built_in">set</span> visualbell</span><br><span class="line"><span class="built_in">set</span> showmode</span><br><span class="line"><span class="built_in">set</span> nu</span><br><span class="line"><span class="built_in">set</span> encoding=UTF-8</span><br><span class="line">filetype on</span><br><span class="line">filetype plugin on</span><br><span class="line">filetype indent on</span><br><span class="line"><span class="built_in">set</span> smarttab</span><br><span class="line">syntax on</span><br><span class="line"><span class="built_in">set</span> mouse=a</span><br><span class="line"></span><br><span class="line"><span class="built_in">set</span> cursorline</span><br><span class="line"><span class="built_in">set</span> cursorcolumn</span><br><span class="line"><span class="string">&quot; set guicursor=n-ci:hor30-iCursor-blinkwait300-blinkon200-blinkoff150</span></span><br><span class="line"><span class="string">&quot;</span> Change cursor shape between insert and normal mode <span class="keyword">in</span> iTerm2.app</span><br><span class="line"><span class="keyword">if</span> <span class="variable">$TERM_PROGRAM</span> =~ <span class="string">&quot;iTerm&quot;</span></span><br><span class="line">    <span class="built_in">let</span> &amp;t_SI = <span class="string">&quot;\&lt;Esc&gt;]50;CursorShape=0\x7&quot;</span> <span class="string">&quot; Vertical bar in insert mode</span></span><br><span class="line"><span class="string">    let &amp;t_EI = &quot;</span>\&lt;Esc&gt;]50;CursorShape=2\x7<span class="string">&quot; &quot;</span> Block <span class="keyword">in</span> normal mode</span><br><span class="line">endif</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">colorscheme slate</span><br><span class="line"></span><br><span class="line"><span class="built_in">set</span> shiftwidth=4</span><br><span class="line"><span class="built_in">set</span> tabstop=4</span><br><span class="line"><span class="built_in">set</span> nobackup</span><br><span class="line"><span class="built_in">set</span> wrap</span><br><span class="line"><span class="built_in">set</span> ignorecase</span><br><span class="line"></span><br><span class="line">call plug#begin(<span class="string">&#x27;~/.vim/plugged&#x27;</span>)</span><br><span class="line">Plug <span class="string">&#x27;junegunn/fzf&#x27;</span>, &#123; <span class="string">&#x27;do&#x27;</span>: &#123; -&gt; fzf#install() &#125; &#125;</span><br><span class="line"><span class="string">&quot; Plug &#x27;/usr/local/opt/fzf&#x27;</span></span><br><span class="line"><span class="string">Plug &#x27;junegunn/fzf.vim&#x27;</span></span><br><span class="line"><span class="string">c</span></span><br></pre></td></tr></table></figure>
+      
+    </div>
+    <div class="article-footer">
+      <blockquote class="mt-2x">
+  <ul class="post-copyright list-unstyled">
+    
+    <li class="post-copyright-link hidden-xs">
+      <strong>本文链接：</strong>
+      <a href="https://little-stoner.github.io/2025/04/23/vim/vimConfig/" title="vim config" target="_blank" rel="external">https://little-stoner.github.io/2025/04/23/vim/vimConfig/</a>
+    </li>
+    
+    <li class="post-copyright-license">
+      <strong>版权声明： </strong> 本博客所有文章除特别声明外，均采用 <a href="http://creativecommons.org/licenses/by/4.0/deed.zh" target="_blank" rel="external">CC BY 4.0 CN协议</a> 许可协议。转载请注明出处！
+    </li>
+  </ul>
+</blockquote>
+
+
+<div class="panel panel-default panel-badger">
+  <div class="panel-body">
+    <figure class="media">
+      <div class="media-left">
+        <a href="https://github.com/little-stoner" target="_blank" class="img-burn thumb-sm visible-lg">
+          <img src="/images/dijk.jpg" class="img-rounded w-full" alt="">
+        </a>
+      </div>
+      <div class="media-body">
+        <h3 class="media-heading"><a href="https://github.com/little-stoner" target="_blank"><span class="text-dark">Viberring</span><small class="ml-1x">Coder</small></a></h3>
+        <div>个人简介。</div>
+      </div>
+    </figure>
+  </div>
+</div>
+
+
+    </div>
+  </article>
   
     
+  <section id="comments">
+  	
+      <div id="vcomments"></div>
     
-      
-      
-      <section class="panel panel-default b-no">
-        <div class="panel-heading" role="tab">
-          <h3 class="panel-title">
-            <a data-toggle="collapse" href="#collapse2025" aria-expanded="true">
-              <i class="icon icon-calendar-plus text-active"></i><i class="icon icon-calendar-minus text"></i>
-              2025
-            </a>
-            <!-- <a href="/archives/2025" class="archive-year">2025</a> -->
-          </h3>
+  </section>
+
+
+  
+</div>
+
+  <nav class="bar bar-footer clearfix" data-stick-bottom>
+  <div class="bar-inner">
+  
+  <ul class="pager pull-left">
+    
+    
+    <li class="next">
+      <a href="/2025/04/23/vim/tmux/" title="tmux config"><span>Older&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
+    </li>
+    
+    
+  </ul>
+  
+  
+  <!-- Button trigger modal -->
+  <button type="button" class="btn btn-fancy btn-donate pop-onhover bg-gradient-warning" data-toggle="modal" data-target="#donateModal"><span>$</span></button>
+  <!-- <div class="wave-icon wave-icon-danger btn-donate" data-toggle="modal" data-target="#donateModal">
+    <div class="wave-circle"><span class="icon"><i class="icon icon-bill"></i></span></div>
+  </div> -->
+  
+  
+  <div class="bar-right">
+    
+    <div class="share-component" data-sites="weibo,qq,wechat,facebook,twitter" data-mobile-sites="weibo,qq,qzone"></div>
+    
+  </div>
+  </div>
+</nav>
+  
+<!-- Modal -->
+<div class="modal modal-center modal-small modal-xs-full fade" id="donateModal" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content donate">
+      <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+      <div class="modal-body">
+        <div class="donate-box">
+          <div class="donate-head">
+            <p>Maybe you could buy me a cup of coffee.</p>
+          </div>
+          <div class="tab-content">
+            <div role="tabpanel" class="tab-pane fade active in" id="alipay">
+              <div class="donate-payimg">
+                <img src="/images/donate/alipayimg.png" alt="Scan Qrcode" title="Scan" />
+              </div>
+              <p class="text-muted mv">Scan this qrcode</p>
+              <p class="text-grey">Open alipay app scan this qrcode, buy me a coffee!</p>
+            </div>
+            <div role="tabpanel" class="tab-pane fade" id="wechatpay">
+              <div class="donate-payimg">
+                <img src="/images/donate/wechatpayimg.png" alt="Scan Qrcode" title="Scan" />
+              </div>
+              <p class="text-muted mv">Scan this qrcode</p>
+              <p class="text-grey">Open wechat app scan this qrcode, buy me a coffee!</p>
+            </div>
+          </div>
+          <div class="donate-footer">
+            <ul class="nav nav-tabs nav-justified" role="tablist">
+              <li role="presentation" class="active">
+                <a href="#alipay" id="alipay-tab" role="tab" data-toggle="tab" aria-controls="alipay" aria-expanded="true"><i class="icon icon-alipay"></i> alipay</a>
+              </li>
+              <li role="presentation" class="">
+                <a href="#wechatpay" role="tab" id="wechatpay-tab" data-toggle="tab" aria-controls="wechatpay" aria-expanded="false"><i class="icon icon-wepay"></i> wechat payment</a>
+              </li>
+            </ul>
+          </div>
         </div>
-        <div id="collapse2025" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="heading2025">
-        <div class="panel-body">
-          <div class="collection">
-    
-    
-<a href="/2025/04/23/vim/vimConfig/" class="collection-item"   itemprop="url">
-  <time datetime="2025-04-23T13:35:49.800Z" itemprop="datePublished">2025-04-23</time>
-  <span>&nbsp;&nbsp;&nbsp;</span> vim config
-</a>
+      </div>
+    </div>
+  </div>
+</div>
 
 
-  
-    
-    
-    
-<a href="/2025/04/23/vim/tmux/" class="collection-item"   itemprop="url">
-  <time datetime="2025-04-23T13:24:47.668Z" itemprop="datePublished">2025-04-23</time>
-  <span>&nbsp;&nbsp;&nbsp;</span> tmux config
-</a>
 
-
-  
-    
-    
-    
-<a href="/2025/04/18/vim/learnVim/" class="collection-item"   itemprop="url">
-  <time datetime="2025-04-18T13:51:13.446Z" itemprop="datePublished">2025-04-18</time>
-  <span>&nbsp;&nbsp;&nbsp;</span> learn vim
-</a>
-
-
-  
-    
-    
-    
-<a href="/2025/04/17/visionOs/swiftUIStateAndBinding/" class="collection-item"   itemprop="url">
-  <time datetime="2025-04-17T14:28:54.229Z" itemprop="datePublished">2025-04-17</time>
-  <span>&nbsp;&nbsp;&nbsp;</span> swift ui state and binding
-</a>
-
-
-  
-    
-    
-    
-<a href="/2025/04/15/visionOs/learnSwiftUI/" class="collection-item"   itemprop="url">
-  <time datetime="2025-04-15T14:59:30.551Z" itemprop="datePublished">2025-04-15</time>
-  <span>&nbsp;&nbsp;&nbsp;</span> learn swift ui
-</a>
-
-
-  
-    
-    
-    
-<a href="/2025/04/14/visionOs/swiftUiScene/" class="collection-item"   itemprop="url">
-  <time datetime="2025-04-14T15:53:24.460Z" itemprop="datePublished">2025-04-14</time>
-  <span>&nbsp;&nbsp;&nbsp;</span> swift ui scene
-</a>
-
-
-  
-    
-    
-    
-<a href="/2025/04/14/mysql/migration/" class="collection-item"   itemprop="url">
-  <time datetime="2025-04-14T13:51:29.339Z" itemprop="datePublished">2025-04-14</time>
-  <span>&nbsp;&nbsp;&nbsp;</span> migrate mysql data
-</a>
-
-
-  
-    
-    
-    
-<a href="/2025/04/13/visionOs/helloVisionPro/" class="collection-item"   itemprop="url">
-  <time datetime="2025-04-13T14:47:46.991Z" itemprop="datePublished">2025-04-13</time>
-  <span>&nbsp;&nbsp;&nbsp;</span> hello vision pro
-</a>
-
-
-  
-    
-    
-    
-<a href="/2025/04/13/k8s/intro/" class="collection-item"   itemprop="url">
-  <time datetime="2025-04-13T05:17:01.398Z" itemprop="datePublished">2025-04-13</time>
-  <span>&nbsp;&nbsp;&nbsp;</span> k8s introduction
-</a>
-
-
-  
-    
-    
-    
-<a href="/2025/04/12/aider/" class="collection-item"   itemprop="url">
-  <time datetime="2025-04-12T04:14:16.376Z" itemprop="datePublished">2025-04-12</time>
-  <span>&nbsp;&nbsp;&nbsp;</span> aider
-</a>
-
-
-  
-  
-    </div></div></div></section>
-  
-
-	    </div>
-  	</article>
-  	 	
 </main>
 
   <footer class="footer" itemscope itemtype="http://schema.org/WPFooter">
@@ -462,6 +500,37 @@ window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
 
 
 
+
+   
+
+
+
+
+   
+    
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/valine"></script>
+  <script type="text/javascript">
+  var GUEST = ['nick', 'mail', 'link'];
+  var meta = 'nick,mail,link';
+  meta = meta.split(',').filter(function(item) {
+    return GUEST.indexOf(item) > -1;
+  });
+  new Valine({
+    el: '#vcomments',
+    verify: false,
+    notify: false,
+    appId: '',
+    appKey: '',
+    placeholder: 'Just go go',
+    avatar: 'mm',
+    meta: meta,
+    pageSize: '10' || 10,
+    visitor: false
+  });
+  </script>
+
+     
 
 
 
