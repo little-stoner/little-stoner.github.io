@@ -16,7 +16,8 @@ sh Anaconda3-2024.06-1-Linux-x86_64.sh
 
 conda create --name ml-project
 conda activate ml-project
-pip install torch==2.6.0 torchvision torchaudio
+nvcc -V
+pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu124
 ```
 
 ## Pytorch version
